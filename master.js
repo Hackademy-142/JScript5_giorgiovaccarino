@@ -29,16 +29,19 @@
                     console.log(`nome: ${player.name}, punteggio: ${player.totalPoints}`)
                 }) //controllo
             },
-
-
-
-            "setNewGame": function () {
+            "setPlayers": function(){
                 let nGiocatori = prompt(`Quanti giocatori siete?`)
                 for (let i = 0; i < nGiocatori; i++) {
                     let name = prompt(`Nome giocatore ${i + 1}:`);
                     this.players.push({ "name": name, "points": [] });
                     // console.log(`${i+1}${name}`) //controllo
                 }
+            },
+
+
+
+            "setNewGame": function () {
+                this.setPlayers();
                 this.setScores();
                 this.setTotalScore();
                 this.setClassifica();
